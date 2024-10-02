@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Adicione isso ao seu arquivo CSS global ou dentro de um <style> em um componente */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* Para Firefox */
+}
+
+@keyframes marquee {
+  0% {
+      transform: translateX(120%);
+  }
+  100% {
+      transform: translateX(-120%);
+  }
+}
+
+.animate-marquee {
+  display: inline-block;
+  animation: marquee 10s linear infinite; /* Ajuste a duração (10s) conforme necessário */
+}
