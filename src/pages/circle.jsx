@@ -5,15 +5,15 @@ import Header from '../components/Header';
 
 function Circle() {
     const circunferenciaRef = useRef(0);
-    const [raio, setRaio] = useState(0);
+    const [diametro, setDiametro] = useState(0);
 
-    function calcularArea() {
+    function calcularDiametro() {
         const circunferencia = parseFloat(circunferenciaRef.current.value);
 
         if (!isNaN(circunferencia)) {
             const pi = Math.PI;
-            const result = circunferencia / (2 * pi);
-            setRaio(result.toFixed(4));
+            const result = circunferencia / pi;
+            setDiametro(result.toFixed(4));
         } else {
             alert("Digite valores válidos");
         }
@@ -21,7 +21,7 @@ function Circle() {
 
     return (
         <div className="w-screen h-screen bg-gray-800 flex flex-col">
-            <Header title='Raio do Círculo' />
+            <Header title='Diâmetro do Círculo' />
             <main className="flex-grow w-full p-2 flex flex-col justify-around items-center">
                 <div className="flex flex-col md:flex-row justify-around w-full items-center">
                     <div className="w-full sm:w-3/5 md:w-2/5 lg:w-1/5 xl:w-1/5 flex flex-col gap-5 mb-5 md:mb-0">
@@ -35,26 +35,27 @@ function Circle() {
                         />
                         <button
                             className="mt-5 w-full p-3 bg-blue-600 text-white rounded-md hover:bg-blue-500"
-                            onClick={calcularArea}
+                            onClick={calcularDiametro}
                         >
-                            Calcular Raio
+                            Calcular Diâmetro
                         </button>
                     </div>
                     <div className="font-bold text-white text-lg flex flex-col items-center md:items-start">
                         <div className="flex items-center gap-3">
                             <p>Circunferência: {circunferenciaRef.current.value}</p>
-                            <div className="w-52 h-52 bg-transparent border-8 border-gray-950 flex items-center justify-center rounded-full">Raio: {raio}</div>
+                            <div className="w-52 h-52 bg-transparent border-8 border-gray-950 flex items-center justify-center rounded-full">
+                                Diâmetro: {diametro}
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div className="w-full gap-3 flex flex-col items-center text-xl font-bold text-gray-300">
                     <h3>Fórmula:</h3>
                     <p className="text-center text-base flex flex-col">
-                        O raio do círculo pode ser encontrado pela fórmula: raio = circunferência / (2π)
-                        <span>Por exemplo, se a circunferência é 31,4 metros, o raio será: 5</span>
+                        O diâmetro do círculo pode ser encontrado pela fórmula: diâmetro = circunferência / π
+                        <span>Por exemplo, se a circunferência é 31,4 metros, o diâmetro será: 10</span>
                     </p>
                 </div>
-
             </main>
             <Footer />
             <ButtonBack />
