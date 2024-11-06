@@ -1,4 +1,4 @@
-import logoCesuca from '../assets/logo_cesuca.webp'
+import logoCesuca from '../assets/imagemIco.ico'
 import PropTypes from 'prop-types'
 import light_mode from '../assets/light_mode.svg'
 
